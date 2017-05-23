@@ -1,9 +1,8 @@
 package com.greetgo.mappers;
 
+
 import com.greetgo.entities.Word;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 /**
  * Created by frankast on 5/20/17.
@@ -11,9 +10,18 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface DataMapper {
 
-    @Select("SELECT* FROM word where id = #{id}")
-    Word getById(@Param("id") int id);
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "text", column = "text"),
+
+    })
+
+    @Select("SELECT id FROM word WHERE id = #{id}")
+            public int getIdFromDB(@Param("id") int id);
+
+    @Select("SELECT text FROM word WHERE id = #{id}")
+           public String getTextFromDB(@Param("id") int id);
 
     @Select("SELECT count(id) from word")
-            int numberOfRows();
+            public int numberOfRowsInTable();
 }

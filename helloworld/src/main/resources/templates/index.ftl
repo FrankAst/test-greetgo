@@ -41,20 +41,10 @@ setInterval(function (){
     <div class="row text-center">
         <h3 id="message"></h3>
     </div>
+
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <div class="panel panel-default">
-                <div class="panel-body" style="padding-bottom: 0;">
-                    <form accept-charset="UTF-8" action="" method="POST">
-                        <textarea class="form-control counted" name="message" placeholder="Type in your message" rows="5" style="margin-bottom:10px;"></textarea>
-                        <div id="logo" class="col-md-5">
-                            <img src="h.jpeg" id="image" />
-                        </div>
-                        <button class="btn btn-info" type="submit" name="addMsg">Post New Message</button>
-                        <button class="btn btn-success" type="submit" name="showAllMessages" style="margin-top: 5px;">Show All Messages</button>
-                    </form>
-                </div>
-            </div>
+        <div id="logo" class="col-md-5">
+            <img src="h.jpeg" id="image" />
         </div>
     </div>
 </div>
